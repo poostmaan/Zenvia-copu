@@ -16,4 +16,4 @@ define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 
 // The name of the database you want to connect to
-define('DB_DATABASE', 'simple_login');
+define('DB_DATABASE', 'seenvia'); 
