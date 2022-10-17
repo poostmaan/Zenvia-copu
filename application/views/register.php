@@ -58,7 +58,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         </div>
                                     <?php endif; ?>
 
-                                    <?= form_open('register', ['class' => 'user']); ?>
+                                    <?= form_open('register', ['class' => 'user']); ?> 
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user <?= (form_error('username') ? 'is-invalid' : ''); ?>" name="username" placeholder="Username" value="<?= set_value('username'); ?>">
                                         <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>

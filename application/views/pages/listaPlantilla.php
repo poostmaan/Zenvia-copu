@@ -58,7 +58,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </nav>
 
                     <h1 class="h3 mb-4 text-gray-800">Plantillas</h1>
-
                     <div class="d-flex justify-content-between"> 
                         <div><input type="text" placeholder="Buscar plantilla" class="form-control"></div>
                         <div><a href="<?= site_url('plantillas/crear'); ?>"><button class="btn btn-primary">Crear nueva plantilla</button></a></div>
@@ -69,12 +68,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <tr>
                                 <th scope="col">Id. plantilla</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Ult. modificacion</th>
-                                <th scope="col">Options</th>
+                                <th scope="col">Ult. modificación</th>
+                                <th scope="col">Opciones</th> 
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
                                 <th scope="row">98a7e70a-9bb5-492e-acca-0ad1ed28b7c1</th>
                                 <td>Plantilla prueba</td>
                                 <td>2022-10-10 15:11:30</td>
@@ -84,7 +83,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <button class="btn btn-danger" data-toggle="modal" data-target="#eliminarModal">X</button> 
                                     </div>
                                 </td>
+                            </tr> -->
+                            <?php foreach ($page['listaPlantillas'] as $plantilla) { ?>
+                            <tr>
+                                <th scope="row"><?php echo $plantilla->id_plantilla;?></th>
+                                <td><?php echo $plantilla->nombre;?></td>
+                                <td><?php echo $plantilla->fecha_modificacion;?></td>
+                                <td>
+                                    <div class="btn-group">    
+                                        <a href="<?= site_url('plantillas/modificar?id_plantilla='.$plantilla->id_plantilla); ?>"><button class="btn btn-success">Modificar</button></a>
+                                        <a href="<?= site_url('plantillas/eliminar?id_plantilla='.$plantilla->id_plantilla); ?>">
+                                            <button class="btn btn-danger">&times</button> 
+                                        </a>
+                                    </div>
+                                </td>
                             </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
         

@@ -61,40 +61,49 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <!-- JQUERY STEP -->
                     
                     <div class="wrapper">
-                        <form action="">
+                        <?= form_open('plantillas/crear', ['class' => 'plantilla']); ?> 
                             <div id="wizard">
                                 <!-- SECTION 1 -->
                                 <h4></h4>
-                                <section>
-                                    <div class="form-row"> <input type="text" class="form-control" placeholder="Nombre plantilla"> </div>
-                                    <div class="form-row"> <select class="form-control"><option id="0" selected>Selecciona el telefono que envia</option><option id="1">+584243901992</option></select> </div>
+                                <section> 
+                                    <div class="form-row"> <input type="text" name="nombre" class="form-control <?= (form_error('nombre') ? 'is-invalid' : ''); ?>" placeholder="Nombre plantilla"> </div> 
+                                    <div class="form-row"> 
+                                    <select 
+                                        class="form-control <?= (form_error('sender_ir') ? 'is-invalid' : ''); ?>" 
+                                        name="sender_id"
+                                    >
+                                        <option id="0" selected>Selecciona el telefono que envia</option>
+                                        <option id="1">+584243901992</option>
+                                    </select> </div>
                                 </section> <!-- SECTION 2 --> 
                                 <h4></h4>
                                 <section>
                                     <div class="d-flex border p-4">
                                         <div class="mr-2">
-                                            <input type="checkbox" name="" id="">
+                                            <input type="hidden" name="tipo_mensaje" id="" value="simple"> 
+                                            <input type="checkbox" name="" id="" checked>
                                         </div>
-                                        <div><span>Plantilla Simple</span></div>
+                                        <div><span>Plantilla Simple</span></div> 
                                     </div>
                                 </section> <!-- SECTION 3 -->
                                 <h4></h4>
                                 <section> 
-                                    <div><p class="m-0">Ingrese el contenido que desea que tenga su mensaje</p></div>
+                                    <div><p class="m-0">Ingrese el contenido que desea que tenga su mensaje</p></div> 
                                     <div>
-                                        <textarea class="form-control" name="" id="" cols="30" rows="5" placeholder="Escribe justo aqui..."></textarea>
+                                        <textarea class="form-control <?= (form_error('mensaje') ? 'is-invalid' : ''); ?>" name="mensaje" id="" cols="30" rows="5" placeholder="Escribe justo aqui..."></textarea>
                                     </div>
                                 </section> <!-- SECTION 4 -->
                                 <h4></h4>
-                                <section>
+                                <section id="finishStep">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
                                         <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
                                         <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
                                     </svg>
                                     <p class="success">Tu plantilla sera guardada como <b>Plantilla prueba</b>, gestiona todas tus plantillas en la página de plantillas</p>
-                                </section> 
+                                    <button type="submit" class="btn btn-success">Guardar y cerrar</button>
+                                </section>  
                             </div>
-                        </form>
+                        <?= form_close(); ?>
                     </div>
 
                 </div>
@@ -162,8 +171,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     }
                     return true;
                 },
-                labels: {
-                    finish: "Order again",
+                labels: { 
+                    // finish: "<button></button>",
                     next: "Siguiente",
                     previous: "Regresar" 
                 }
@@ -185,7 +194,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $('.checkbox-circle label').click(function() {
                 $('.checkbox-circle label').removeClass('active');
                 $(this).addClass('active');
-            })
+            }) 
+
+            $('#wizard-p-3').append('<button type="submit" class="btn btn-success">Guardar y cerrar</button>')
+
         })
     </script>
 </body>

@@ -47,57 +47,63 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <!-- End topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class=" animate__animated animate__backInUp"> 
 
-                    <!-- Page Heading -->
-                    <nav aria-label="breadcrumb bg-none">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="<?= site_url('plantillas'); ?>"><i class="fas fa-long-arrow-alt-left"></i> Regresar</a></li>
-                        </ol>
-                    </nav>
-
-                    <h1 class="h3 mb-4 text-gray-800">Modificar Plantilla</h1>
-
-                </div>
-
-                <div class="bg-white">
+                    <div class="container-fluid"> 
+    
+                        <!-- Page Heading -->
+                        <nav aria-label="breadcrumb bg-none">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="<?= site_url('plantillas'); ?>"><i class="fas fa-long-arrow-alt-left"></i> Regresar</a></li>
+                            </ol>
+                        </nav>
+    
+                        <h1 class="h3 mb-4 text-gray-800">Modificar Plantilla</h1>
+                    </div>
+    
+                    <div class="bg-white">
+                        <div class="container">
+                            
+                            
+                            <?php foreach ($page['plantilla'] as $plantilla) { ?>
+                            <div class="row py-4">
+                                <div class="col-md-3">
+                                    <div class="font-weight-bold"><span>Nombre Plantilla</span></div>
+                                    <div><span><?php echo $plantilla->nombre;?></span></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="font-weight-bold"><span>ID. Plantilla</span></div>
+                                    <div><span><?php echo $plantilla->id_plantilla?></span></div>
+                                </div>
+                            </div>
+                            <div class="row pb-4">
+                                <div class="col-md-3">
+                                    <div class="font-weight-bold"><span>Sender ID</span></div>
+                                    <div><span><?php echo $plantilla->sender_id?></span></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="font-weight-bold"><span>Creación</span></div>
+                                    <div><span><?php echo $plantilla->fecha_creacion;?></span></div> 
+                                </div>
+                                <div class="col-md-3"> 
+                                    <div class="font-weight-bold"><span>Ult. Modificación</span></div>
+                                    <div><span><?php echo $plantilla->fecha_modificacion?></span></div>
+                                </div>
+                            </div>
+                            
+    
+                        </div>
+                    </div>
+    
                     <div class="container">
-
-                        <div class="row py-4">
-                            <div class="col-md-3">
-                                <div class="font-weight-bold"><span>Nombre Plantilla</span></div>
-                                <div><span>Mensaje prueba</span></div>
+                        <h4 class="my-3">Cuerpo del mensaje</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <textarea class="form-control" name="" id="" cols="30" rows="5" placeholder="Escribe justo aqui..."><?php echo $plantilla->mensaje;?></textarea>
                             </div>
-                            <div class="col-md-4">
-                                <div class="font-weight-bold"><span>ID. Plantilla</span></div>
-                                <div><span>98a7e70a-9bb5-492e-acca-0ad1ed28b7c1</span></div>
-                            </div>
-                        </div>
-                        <div class="row pb-4">
-                            <div class="col-md-3">
-                                <div class="font-weight-bold"><span>Sender ID</span></div>
-                                <div><span>+584243609289</span></div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="font-weight-bold"><span>Creación</span></div>
-                                <div><span>2022-10-10 15:11:28</span></div>
-                            </div>
-                            <div class="col-md-3"> 
-                                <div class="font-weight-bold"><span>Ult. Modificación</span></div>
-                                <div><span>2022-10-10 15:11:30</span></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="container">
-                    <h4 class="my-3">Cuerpo del mensaje</h4>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <textarea class="form-control" name="" id="" cols="30" rows="5" placeholder="Escribe justo aqui..." value="Hola, este es un mensaje"></textarea>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
                 <!-- /.container-fluid -->
 
