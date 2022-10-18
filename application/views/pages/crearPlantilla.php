@@ -39,7 +39,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" style="height: 100vh">
 
                 <!-- Topbar -->
                 <?php $this->load->view('components/topbar.php'); ?>
@@ -154,6 +154,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 transitionEffect: "fade",
                 enableAllSteps: true,
                 transitionEffectSpeed: 500,
+                onFinished: function(event, currentIndex) {
+                    enableFinishButton: false;
+                },
                 onStepChanging: function(event, currentIndex, newIndex) {
                     if (newIndex === 1) {
                         $('.steps ul').addClass('step-2');
@@ -176,7 +179,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     return true;
                 },
                 labels: { 
-                    // finish: "<button></button>",
+                    // finish: "<button id='eliminame'></button>",
                     next: "Siguiente",
                     previous: "Regresar" 
                 }
@@ -199,6 +202,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 $('.checkbox-circle label').removeClass('active');
                 $(this).addClass('active');
             }) 
+
+            setTimeout(() => {
+
+                $('.step-last').remove();
+            },2000)
 
             // $('#wizard-p-3').append('<button type="submit" class="btn btn-success">Guardar y cerrar</button>')
 
