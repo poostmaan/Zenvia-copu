@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon rotate-n-15"> 
             <i class="fas fa-code"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Simple Login</div>
+        <div class="sidebar-brand-text mx-3">Seenvia</div>
     </a>
 
     <!-- Divider -->
@@ -13,7 +13,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Main Navigation
+        Navegación
     </div>
 
     <!-- Nav Item - Homepages -->
@@ -36,7 +36,7 @@
     <li class="nav-item">
         <a class="nav-link pb-0" href="<?= site_url('logout'); ?>" data-toggle="modal" data-target="#logoutModal">
             <i class="fas fa-fw fa-sign-out-alt"></i>
-            <span>Logout</span>
+            <span>Salir</span>
         </a>
     </li>
 

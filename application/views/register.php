@@ -39,7 +39,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="col">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Crear una cuenta</h1>
                                     </div>
 
                                     <?php if ($this->session->flashdata('success_message')) : ?>
@@ -60,25 +60,37 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                     <?= form_open('register', ['class' => 'user']); ?> 
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user <?= (form_error('username') ? 'is-invalid' : ''); ?>" name="username" placeholder="Username" value="<?= set_value('username'); ?>">
+                                        <input type="text" class="form-control form-control-user <?= (form_error('username') ? 'is-invalid' : ''); ?>" name="username" placeholder="Nombre completo" value="<?= set_value('username'); ?>">
                                         <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="password" class="form-control form-control-user <?= (form_error('password1') ? 'is-invalid' : ''); ?>" name="password1" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user <?= (form_error('password1') ? 'is-invalid' : ''); ?>" name="password1" placeholder="Contraseña">
                                             <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="col-sm-6">
-                                            <input type="password" class="form-control form-control-user <?= (form_error('password2') ? 'is-invalid' : ''); ?>" name="password2" placeholder="Confirm Password">
+                                            <input type="password" class="form-control form-control-user <?= (form_error('password2') ? 'is-invalid' : ''); ?>" name="password2" placeholder="Confirmar Contraseña">
                                             <?= form_error('password2', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">Register Account</button>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user <?= (form_error('rif') ? 'is-invalid' : ''); ?>" name="rif" placeholder="RIF" value="<?= set_value('rif'); ?>">
+                                        <?= form_error('rif', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user <?= (form_error('email') ? 'is-invalid' : ''); ?>" name="email" placeholder="Correo Electrónico" value="<?= set_value('email'); ?>">
+                                        <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user <?= (form_error('Teléfono') ? 'is-invalid' : ''); ?>" name="Teléfono" placeholder="Teléfono" value="<?= set_value('Teléfono'); ?>">
+                                        <?= form_error('Teléfono', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">Registrarme ahora</button>
                                     <?= form_close(); ?>
 
                                     <hr />
                                     <div class="text-center">
-                                        <a class="small" href="<?= site_url('login'); ?>">Already have an account? Login!</a>
+                                        <a class="small" href="<?= site_url('login'); ?>">¿Ya tienes una cuenta? Ingresa!</a>
                                     </div>
                                 </div>
                             </div>

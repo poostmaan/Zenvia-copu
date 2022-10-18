@@ -66,6 +66,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <!-- SECTION 1 -->
                                 <h4></h4>
                                 <section> 
+                                        <!-- <span>Complete la configuración necesaria para crear una plantilla. </span>  -->
                                     <div class="form-row"> <input type="text" name="nombre" class="form-control <?= (form_error('nombre') ? 'is-invalid' : ''); ?>" placeholder="Nombre plantilla"> </div> 
                                     <div class="form-row"> 
                                     <select 
@@ -94,7 +95,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     </div>
                                 </section> <!-- SECTION 4 -->
                                 <h4></h4>
-                                <section id="finishStep">
+                                <section> 
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
                                         <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
                                         <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
@@ -111,10 +112,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
             </div>
             <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <?php $this->load->view('components/footer.php'); ?>
-            <!-- End of Footer -->
 
         </div>
 
@@ -168,7 +165,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     } else {
                         $('.steps ul').removeClass('step-4');
                         $('.actions ul').removeClass('step-last');
-                    }
+                    } 
                     return true;
                 },
                 labels: { 
@@ -196,7 +193,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 $(this).addClass('active');
             }) 
 
-            $('#wizard-p-3').append('<button type="submit" class="btn btn-success">Guardar y cerrar</button>')
+            // $('#wizard-p-3').append('<button type="submit" class="btn btn-success">Guardar y cerrar</button>')
 
         })
     </script>

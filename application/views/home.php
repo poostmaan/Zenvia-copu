@@ -12,7 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta name="description" content="PHP Simple Login with CodeIgniter Framework">
 	<meta name="author" content="">
 
-	<title>Simple Login - <?= ($page['title'] ?? 'Undefined'); ?></title>
+	<title>Seenvia - <?= ($page['title'] ?? 'Undefined'); ?></title> 
 
 	<!-- Custom fonts for this template-->
 	<link href="<?= site_url('public/vendor/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
@@ -75,6 +75,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 					<?php endif; ?>
 
+					<div class="row">
+						<div class="d-flex">
+							<div class="mx-2">
+								<div class="bg-primary rounded p-4 text-white" style="max-width: 270px">
+									<h4>Plantillas</h4>
+									<span>Crea plantillas personalizar para usarlas como mensaje</span>
+									<a href="<?php echo site_url('plantillas')?>">
+										<button class="btn btn-success mt-3"><i class="fas fa-paste"></i> Ver plantillas</button>
+									</a>
+								</div>
+							</div>
+							<div class="mx-2">
+								<div class="bg-primary rounded p-4 text-white" style="max-width: 280px">
+									<h4>Mensaje personal</h4>
+									<span>Ingresa un número en específico y envíale un mensaje</span>
+
+									<button class="btn btn-success mt-3"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- /.container-fluid -->
 
@@ -82,7 +103,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<!-- End of Main Content -->
 
 			<!-- Footer -->
-			<?php $this->load->view('components/footer.php'); ?>
+			<?php //$this->load->view('components/footer.php'); ?>
 			<!-- End of Footer -->
 
 		</div>

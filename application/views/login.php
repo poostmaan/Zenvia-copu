@@ -39,7 +39,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="col">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
                                     </div>
 
                                     <?php if ($this->session->flashdata('success_message')) : ?>
@@ -60,25 +60,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                     <?= form_open('login', ['class' => 'user']); ?>
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user <?= (form_error('username') ? 'is-invalid' : ''); ?>" name="username" placeholder="Username" value="<?= set_value('username'); ?>">
+                                        <input type="text" class="form-control form-control-user <?= (form_error('username') ? 'is-invalid' : ''); ?>" name="username" placeholder="Nombre completo" value="<?= set_value('username'); ?>">
                                         <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user <?= (form_error('password') ? 'is-invalid' : ''); ?>" name="password" placeholder="Password">
+                                        <input type="password" class="form-control form-control-user <?= (form_error('password') ? 'is-invalid' : ''); ?>" name="password" placeholder="Contraseña">
                                         <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
                                             <input type="checkbox" class="custom-control-input" id="remember" name="remember" value="1">
-                                            <label class="custom-control-label" for="remember">Remember Me</label>
+                                            <label class="custom-control-label" for="remember">Recuérdame</label>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">Ingresar </button>
                                     <?= form_close(); ?>
 
                                     <hr />
                                     <div class="text-center">
-                                        <a class="small" href="<?= site_url('register'); ?>">Create an Account!</a>
+                                        <a class="small" href="<?= site_url('register'); ?>">Crear una cuenta</a>
                                     </div>
                                 </div>
                             </div>

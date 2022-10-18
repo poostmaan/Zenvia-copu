@@ -60,7 +60,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <h1 class="h3 mb-4 text-gray-800">Plantillas</h1>
                     <div class="d-flex justify-content-between"> 
                         <div><input type="text" placeholder="Buscar plantilla" class="form-control"></div>
-                        <div><a href="<?= site_url('plantillas/crear'); ?>"><button class="btn btn-primary">Crear nueva plantilla</button></a></div>
+                        <div><a href="<?= site_url('plantillas/crear'); ?>"><button class="btn btn-primary"><i class="fas fa-plus-circle"></i> Crear nueva plantilla</button></a></div>
                     </div>
 
                     <table class="table table-hover my-3">
@@ -91,9 +91,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <td><?php echo $plantilla->fecha_modificacion;?></td>
                                 <td>
                                     <div class="btn-group">    
-                                        <a href="<?= site_url('plantillas/modificar?id_plantilla='.$plantilla->id_plantilla); ?>"><button class="btn btn-success">Modificar</button></a>
+                                        <a href="<?= site_url('plantillas/modificar?id_plantilla='.$plantilla->id_plantilla); ?>">
+                                            <button class="btn btn-outline-primary" style="border-radius: 0"><i class="fas fa-edit"></i> Modificar</button>
+                                        </a>
                                         <a href="<?= site_url('plantillas/eliminar?id_plantilla='.$plantilla->id_plantilla); ?>">
-                                            <button class="btn btn-danger">&times</button> 
+                                            <button class="btn btn-outline-danger" style="border-radius: 0">&times</button> 
                                         </a>
                                     </div>
                                 </td>
@@ -109,7 +111,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <?php $this->load->view('components/footer.php'); ?>
+            <?php //$this->load->view('components/footer.php'); ?>
             <!-- End of Footer -->
 
         </div>
