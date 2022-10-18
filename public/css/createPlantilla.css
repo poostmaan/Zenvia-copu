@@ -7,7 +7,7 @@ body {
 
   font-size: 15px;
   color: #666;
-  background-color: #6645eb;
+  background-color: #4e73df;
   margin: 0;
 }
 :focus {
@@ -78,7 +78,7 @@ img {
 }
 .steps ul li.first a,
 .steps ul li.checked a {
-  background: #6645eb;
+  background: #4e73df;
   transition: all 0.5s ease;
 }
 .steps ul:before {
@@ -178,8 +178,8 @@ textarea.form-control {
   display: inline-flex;
   height: 51px;
   width: 135px;
-  align-items: center;
-  background: #6200ea;
+  align-items: center; 
+  background: #4e73df;
   cursor: pointer;
   color: #fff !important;
   position: relative;

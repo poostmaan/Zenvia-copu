@@ -81,8 +81,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <section>
                                     <div class="d-flex border p-4">
                                         <div class="mr-2">
-                                            <input type="hidden" name="tipo_mensaje" id="" value="simple"> 
-                                            <input type="checkbox" name="" id="" checked>
+                                            <input type="hidden" name="tipo_mensaje" id="" value="simple" required> 
+                                            <input type="checkbox" name="" id="tipoMensajeChekbox" checked>
                                         </div>
                                         <div><span>Plantilla Simple</span></div> 
                                     </div>
@@ -141,6 +141,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     <script>
         $(function() {
+
+            $('#tipoMensajeChekbox').click(function(e) {
+                e.preventDefault()
+                e.stopPropagation()
+                return false;
+            })
+
             $("#wizard").steps({
                 headerTag: "h4",
                 bodyTag: "section",

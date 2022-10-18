@@ -110,10 +110,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <?php $this->load->view('components/footer.php'); ?>
-            <!-- End of Footer -->
-
         </div>
 
         <!-- End of Content Wrapper -->

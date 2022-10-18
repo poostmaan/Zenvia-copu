@@ -78,7 +78,9 @@ class Plantillas extends CI_Controller
 			'user' => (array) $this->_user
 		];
 		
-		$this->form_validation->set_rules('nombre', 'Nombre', 'trim|required|is_unique[plantillas.nombre]');
+		$this->form_validation->set_rules('nombre', 'Nombre', 'trim|required|is_unique[plantillas.nombre]'); 
+		// $this->form_validation->set_rules('sender_id', 'Sender ID', 'trim|required|is_unique[plantillas.sender_id]');
+		$this->form_validation->set_rules('mensaje', 'Mensaje', 'trim|required|is_unique[plantillas.mensaje]');
 		
 		if( $this->form_validation->run() === false ) {     
 			$this->load->view('plantillas', $data);  
