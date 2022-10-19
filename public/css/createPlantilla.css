@@ -36,8 +36,9 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-.wrapper {
-  max-width: 600px;
+.wrapper { 
+  border: 1px solid rgb(184, 184, 184) !important;
+  max-width: 600px;  
   height: 100vh; 
   margin: auto;
   /* display: flex; */
@@ -56,10 +57,10 @@ img {
 #wizard {
   /* min-height: 570px; */ 
   background: #fff;
-  margin-right: 60px;
+  /* margin-right: 60px; */
   padding: 107px 75px 65px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  /* margin-top: 20px;
+  margin-bottom: 20px; */
 }
 .steps {
   margin-bottom: 30px;
