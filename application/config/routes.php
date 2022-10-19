@@ -59,3 +59,5 @@ $route['register'] = 'auth/register';
 $route['logout'] = 'auth/logout';
 
 $route['chats'] = 'chats';
+
+$route['mensajes'] = 'mensajes';
