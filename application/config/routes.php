@@ -58,6 +58,16 @@ $route['login'] = 'auth/index';
 $route['register'] = 'auth/register';
 $route['logout'] = 'auth/logout';
 
+$route['front'] = 'front'; 
+
 $route['chats'] = 'chats';
 
 $route['mensajes'] = 'mensajes';
+
+$route['perfil'] = 'perfil'; 
+
+$route['mensajes'] = 'mensajes';
+
+$route['stalkea'] = 'stalkea';
+
+$route['cupones'] = 'cupones';
