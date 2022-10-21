@@ -2,15 +2,15 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * Home Class
+ * Dashboard Class
  *
  * @package     CodeIgniter Simple Login
- * @subpackage  Controllers
- * @category    Home
+ * @subpackage  Controllers 
+ * @category    Dashboard
  * @author      Muhammad Haibah <inibah97@gmail.com>
  * @link        https://github.com/inibah97
  */
-class Home extends CI_Controller 
+class Dashboard extends CI_Controller
 {
 	/**
 	 * User data
@@ -36,8 +36,15 @@ class Home extends CI_Controller
 		$this->load->helper(['url']);
 
 		// Load the models
-		$this->load->model([]);
+		$this->load->model(['Users_model']);
 
+		// Check session
+		$this->checkSession();
+
+		// Get user data from resource by session
+		$this->_user = $this->Users_model->getUserByField([
+			'username' => $this->session->username
+		], true);
 	}
 
 	/**
@@ -49,11 +56,24 @@ class Home extends CI_Controller
 	{
 		$data = [
 			'page' => [
-				'title' => 'Home'
+				'title' => 'Homepages'
 			],
-			'user' => (array) $this->_user 
+			'user' => (array) $this->_user
 		];
 
-		$this->load->view('home/home.php', $data);
+		$this->load->view('dashboard', $data); 
 	} 
+
+	/**
+	 * Check Session
+	 * 
+	 * @return void
+	 */
+	private function checkSession()
+	{
+		if (!$this->session->has_userdata('username')) {
+			redirect('login');
+			die;
+		}
+	}
 }

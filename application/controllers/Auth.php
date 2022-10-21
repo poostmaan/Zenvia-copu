@@ -78,7 +78,7 @@ class Auth extends CI_Controller
                     }
 
                     $this->session->set_flashdata('success_message', 'Welcome, ' . $checkUser->username . '.');
-                    redirect('/');
+                    redirect('dashboard'); 
                 } else {
                     $this->session->set_flashdata('error_message', 'Invalid Username or Password');
                     redirect('login', 'refresh');
